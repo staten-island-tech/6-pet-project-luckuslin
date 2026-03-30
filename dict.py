@@ -10,11 +10,13 @@ sushi_orders = [
     {"name": "Salmon Nigiri", "price": 6},
     {"name": "California Roll", "price": 8}
 ]
-def recipet(orders):
-    recpiet = {}
-    for index in sushi_orders():
-        if orders in sushi_orders:
-            print["name"]
+def receipt(orders):
+    recipet = {}
+    for order in orders:
+    if order['name'] in receipt
+    print("Works")
+else:
+receipet[order['n']]
 
 
 
