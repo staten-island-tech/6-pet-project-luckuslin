@@ -40,9 +40,12 @@ wards = {
 }
 staff = {}
 
+for dept,docs in wards.items():
+    print (dept, docs)
+    for doc in docs:
+        if doc ["Cardiology"] in staff:
+            staff[doc["Cardiology"]]
 
-for wards, staff in wards.items:
-    if wards['Cardiology'] in wards:
-        staff['Cardiology']
+
 
 
