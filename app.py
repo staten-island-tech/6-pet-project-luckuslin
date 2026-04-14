@@ -22,24 +22,29 @@ class Pet:
         if test > 100:
             print("lies")
             happiness == -100000000000
-        else :
+        elif test < 100:
+            test % 2 
+            if test % 2 == float:
+                test += 0.5
+            happiness += test
             test += happiness
+         
     def play(self):
         playtime=0
         random_int = random.randint(1, 10)
         playing=int
-        while playing != random_int
-        playing=int(input("Guess the Number to increase happiness!"))
-        if playing == random_int:
-                playtime += 100
-        else :
+        while playing != random_int:
+            playing=int(input("Guess the Number to increase happiness!"))
+            if playing != random_int:
                 playtime -= 10
                 print("try again")
                 if playing >= random_int:
                     print("Too High")
                 elif playing <= random_int:
                     print("Too Low")
-        
+            elif playing == random_int:
+                playtime += 100
+                print("Good Job")
         
         retry = input("Do you want to try again?")
         if retry == "Yes":
@@ -48,14 +53,15 @@ class Pet:
                 playingpt2=int
                 while playingpt2 != randomint:
                     playingpt2=int(input("Guess the Number to increase happiness! 1 to 100!"))
-                    if playing == randomint:
+                    if playingpt2 == randomint:
                         playtime += 5000
+                        print("Good Job")
                     else :
-                        playtime -= 10
+                        playtime -= 250
                         print("try again")
-                        if playing >= random_int:
+                        if playingpt2 >= randomint:
                             print("Too High")
-                        elif playing <= random_int:
+                        elif playingpt2 <= randomint:
                             print("Too Low")
         elif retry == "No":
                 self.__happiness += playtime
@@ -65,6 +71,8 @@ class Pet:
             print(f"{self.name} has {self.__happiness} happiness, and is happy. Good Job!")
         elif self.__happiness > 100:
             print(f"{self.name} has {self.__happiness} happiness, and is very happy. Good Job!")
+        elif self.__happiness > 1000:
+            print(f"Wow!{self.name} has {self.__happiness}happiness, and is extremely happy. Excellent work")
         elif self.__happiness < 0:
             print(f"{self.name} has {self.__happiness} happiness, and is not very happy. Do Something you chud")
         
