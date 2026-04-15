@@ -15,9 +15,10 @@ print(Louis.__dict__) """
 
 
 class Pet:
-    def __init__(self,name,happiness):
+    def __init__(self,name,happiness,age):
         self.name = name
         self.__happiness = happiness
+        self.age = age
         test =int(input(f"How much do you like your pet {name}, from a scale of 1 to 100?"))
         if test > 100:
             print("lies")
@@ -28,13 +29,14 @@ class Pet:
                 test += 0.5
             happiness += test
             test += happiness
+            
          
     def play(self):
         playtime=0
         random_int = random.randint(1, 10)
         playing=int
         while playing != random_int:
-            playing=int(input("Guess the Number to increase happiness!"))
+            playing=int(input("Guess the Number to increase happiness!1 to 10:"))
             if playing != random_int:
                 playtime -= 10
                 print("try again")
@@ -47,17 +49,17 @@ class Pet:
                 print("Good Job")
         
         retry = input("Do you want to try again?")
-        if retry == "Yes":
+        if retry == "Yes" or "YEs" or "yes" or "yES" or "YES" or "yeS":
                 print("Run it Back!")
                 randomint = random.randint(1,100)
                 playingpt2=int
                 while playingpt2 != randomint:
-                    playingpt2=int(input("Guess the Number to increase happiness! 1 to 100!"))
+                    playingpt2=int(input("Guess the Number to increase happiness! 1 to 100!:"))
                     if playingpt2 == randomint:
                         playtime += 5000
                         print("Good Job")
                     else :
-                        playtime -= 250
+                        playtime -= 350
                         print("try again")
                         if playingpt2 >= randomint:
                             print("Too High")
@@ -71,16 +73,34 @@ class Pet:
             print(f"{self.name} has {self.__happiness} happiness, and is happy. Good Job!")
         elif self.__happiness > 100:
             print(f"{self.name} has {self.__happiness} happiness, and is very happy. Good Job!")
-        elif self.__happiness > 1000:
+        elif self.__happiness > 10000:
             print(f"Wow!{self.name} has {self.__happiness}happiness, and is extremely happy. Excellent work")
         elif self.__happiness < 0:
             print(f"{self.name} has {self.__happiness} happiness, and is not very happy. Do Something you chud")
         
+        
 
 
-pet=Pet("fatty",0)
-pet.play()
-pet.showmentality()
+pet=Pet("fatty",0,2)
+while True:
+    pet.play()
+    pet.showmentality()
+    breaks=input("Do You Want to Continue or stop caring for pet?")
+    if breaks == "Continue":
+        True
+        pet.age += 1
+        print(f"Your Pets Age is {pet.age}")
+        if pet.age == 12:
+            False
+            print("Your Pet Has Died of Old Age."f"He Lived to {pet.age} Years Old")
+    else :
+        False
+        if pet.__happiness > 45000:
+            print("Your pet has died happy."f"He Lived to {pet.age} Years Old")
+        else :
+            print("Your Pet Has Died of Neglect."f"He Lived to {pet.age} Years Old")
+        break 
+
 
 
 
